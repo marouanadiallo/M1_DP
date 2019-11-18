@@ -1,0 +1,15 @@
+/Bille.class
+/BilleMvtNewtonArret.class
+/BilleMvtNewtonFrottementRebond.class
+/BilleMvtPesanteurFrottementRebond.class
+/BilleMvtRUPasseMurailles.class
+/BilleMvtRURebond.class
+/OutilsBille.class
+/BilleNormal.class
+/DecorateurComportement.class
+/AbsenceAcceleration.class
+/AttiractionNewton.class
+/Acceleration.class
+/Collision.class
+/RebondBord.class
+/OutilsBilleNormal.class

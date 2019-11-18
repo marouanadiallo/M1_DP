@@ -1,0 +1,18 @@
+package exodecorateur_angryballs.maladroit.modele;
+
+import java.util.Vector;
+
+public abstract class Collision extends DecorateurComportement{
+
+	public Collision(Bille bille) {
+		super(bille);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	@Override
+	public void gestionAcceleration(Vector<Bille> billes) {
+		// TODO Auto-generated method stub
+		
+	}
+}
