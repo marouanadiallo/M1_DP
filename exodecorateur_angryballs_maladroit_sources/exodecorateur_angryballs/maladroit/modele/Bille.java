@@ -1,8 +1,10 @@
 package exodecorateur_angryballs.maladroit.modele;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.util.Vector;
 
+import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
 
@@ -68,11 +70,31 @@ public abstract class Bille
 		return this.clef;
 	}
 
-//----------------- classe Bille-------------------------------------
 
+	public double masse() 
+	{
+		return ro*Geop.volumeSphere(rayon);
+	}
+
+
+	public void dessine (Graphics g)
+	{
+	    int width, height;
+	    int xMin, yMin;
+	    
+	    xMin = (int)Math.round(position.x-rayon);
+	    yMin = (int)Math.round(position.y-rayon);
+	
+	    width = height = 2*(int)Math.round(rayon); 
+	
+	    g.setColor(couleur);
+	    g.fillOval( xMin, yMin, width, height);
+	    g.setColor(Color.CYAN);
+	    g.drawOval(xMin, yMin, width, height);
+	}
+	
+	
 public abstract void gestionAcceleration(Vector<Bille> billes);
-
-
 
 /**
  * gestion de l'eventuelle  collision de cette bille avec les autres billes

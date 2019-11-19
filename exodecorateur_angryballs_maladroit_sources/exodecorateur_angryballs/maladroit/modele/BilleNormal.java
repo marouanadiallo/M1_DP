@@ -61,10 +61,6 @@ public class BilleNormal extends Bille {
     }
 	
 	
-	public double masse() 
-	{
-		return ro*Geop.volumeSphere(rayon);
-	}
 	
 
 	/**
@@ -82,21 +78,6 @@ public class BilleNormal extends Bille {
 	}
 	
 
-	public void dessine (Graphics g)
-	{
-	    int width, height;
-	    int xMin, yMin;
-	    
-	    xMin = (int)Math.round(position.x-rayon);
-	    yMin = (int)Math.round(position.y-rayon);
-	
-	    width = height = 2*(int)Math.round(rayon); 
-	
-	    g.setColor(couleur);
-	    g.fillOval( xMin, yMin, width, height);
-	    g.setColor(Color.CYAN);
-	    g.drawOval(xMin, yMin, width, height);
-	}
 
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,

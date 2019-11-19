@@ -1,25 +1,16 @@
 package exodecorateur_angryballs.maladroit.modele;
 
-import java.awt.Color;
+import java.util.Vector;
 
-import mesmaths.geometrie.base.Vecteur;
+public class AbsenceAcceleration extends Acceleration{
 
-public class AbsenceAcceleration extends DecorateurComportement{
-
-	public AbsenceAcceleration(Bille bille, Vecteur position, double rayon, Vecteur vitesse, Color couleur) {
-		super(bille, position, rayon, vitesse, couleur);
+	public AbsenceAcceleration(Bille bille) {
+		super(bille);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void Comportement() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
-			double hauteur) {
+	public void gestionAcceleration(Vector<Bille> billes) {
 		// TODO Auto-generated method stub
 		
 	}
