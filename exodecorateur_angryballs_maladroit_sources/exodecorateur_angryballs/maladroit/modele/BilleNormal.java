@@ -42,47 +42,23 @@ public class BilleNormal extends Bille {
 	}
 	
 	
-	/**
-	 * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration. 
-	 * billes est la liste de toutes les billes en mouvement
-	 * Cette methode peut avoir besoin de "billes" si this subit l'attraction gravitationnelle des autres billes
-	 * La nature du calcul du vecteur acceleration de la bille  est definie dans les classes derivees
-	 * A ce niveau le vecteur acceleration est mis e zero (c'est e dire pas d'acceleration)
-	 * */
-	public void gestionAcceleration(Vector<Bille> billes)
-	{
-		this.getAcceleration().set(Vecteur.VECTEURNUL);
-	}
-
 	
 	public String toString() 
     {
 		return "centre = " + position + " rayon = "+rayon +  " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef;
     }
 	
-	
-	
-
-	/**
-	 * mise e jour de position et vitesse e t+deltaT e partir de position et vitesse e l'instant t
-	 * 
-	 * modifie le vecteur position et le vecteur vitesse
-	 * 
-	 * laisse le vecteur acceleration intact
-	 *
-	 * La bille subit par defaut un mouvement uniformement accelere
-	 * */
-	public  void  deplacer( double deltaT)
+	@Override
+	public void gestionAcceleration(Vector<Bille> billes)
 	{
-		Cinematique.mouvementUniformementAccelere( this.getPosition(), this.getVitesse(), this.getAcceleration(), deltaT);
+		this.getAcceleration().set(Vecteur.VECTEURNUL);
 	}
-	
+
 
 
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
 			double hauteur) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 }

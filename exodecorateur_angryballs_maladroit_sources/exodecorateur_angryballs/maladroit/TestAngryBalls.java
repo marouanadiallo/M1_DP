@@ -4,13 +4,6 @@ import java.awt.Color;
 import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
-
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 import exodecorateur_angryballs.maladroit.modele.*;
@@ -73,15 +66,20 @@ v2 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 v3 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 
-//--------------- ici commence la partie e changer ---------------------------------
+//--------------- ici commence la partie à changer ---------------------------------
 
 //billes.add(new         BilleMvtRURebond(p0, rayon, v0, Color.red));
 //billes.add(new      BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0,0.001), Color.yellow));
 //billes.add(new              BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-billes.add(new              BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
+//billes.add(new              BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
 //billes.add(new BilleMvtNewtonArret(p4, rayon, v4,  Color.black));
+Bille b = new BilleNormal(p0, rayon, v0, Color.green);
+b = new AbsenceAcceleration(b);
+b = new RebondBord(b);
 
-//---------------------- ici finit la partie e changer -------------------------------------------------------------
+billes.add(b);
+
+//---------------------- ici finit la partie à changer -------------------------------------------------------------
 
 
 System.out.println("billes = " + billes);

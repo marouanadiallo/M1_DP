@@ -12,6 +12,6 @@ public class AttiractionNewton extends Acceleration {
 	@Override
 	public void gestionAcceleration(Vector<Bille> billes) {
 		// TODO Auto-generated method stub
-		
+		this.getAcceleration().ajoute(OutilsBille.gestionAccelerationNewton(this, billes));
 	}
 }

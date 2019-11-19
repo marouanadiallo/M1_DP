@@ -1,20 +1,20 @@
 package exodecorateur_angryballs.maladroit.modele;
 
 public abstract class DecorateurComportement extends Bille{
-	protected Bille bille;
+	protected Bille billeDecorer;
 
-	public DecorateurComportement(Bille bille) {
+	public DecorateurComportement(Bille billeDecorer) {
 
-		this.bille = bille;
+		this.billeDecorer = billeDecorer;
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Bille getBille() {
-		return bille;
+		return billeDecorer;
 	}
 
 	public void setBille(Bille bille) {
-		this.bille = bille;
+		this.billeDecorer = bille;
 	}
 
 }

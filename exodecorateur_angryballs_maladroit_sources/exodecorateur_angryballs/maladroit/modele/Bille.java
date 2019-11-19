@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Vector;
 
+import mesmaths.cinematique.Cinematique;
 import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
@@ -94,7 +95,7 @@ public abstract class Bille
 	}
 	
 	
-public abstract void gestionAcceleration(Vector<Bille> billes);
+
 
 /**
  * gestion de l'eventuelle  collision de cette bille avec les autres billes
@@ -111,6 +112,28 @@ public boolean gestionCollisionBilleBille(Vector<Bille> billes)
 	return OutilsBille.gestionCollisionBilleBille(this, billes);
 }
 
+/**
+ * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration. 
+ * billes est la liste de toutes les billes en mouvement
+ * Cette methode peut avoir besoin de "billes" si this subit l'attraction gravitationnelle des autres billes
+ * La nature du calcul du vecteur acceleration de la bille  est definie dans les classes derivees
+ * A ce niveau le vecteur acceleration est mis e zero (c'est e dire pas d'acceleration)
+ * */
+
+
+/**
+ * mise e jour de position et vitesse e t+deltaT e partir de position et vitesse e l'instant t
+ * 
+ * modifie le vecteur position et le vecteur vitesse
+ * 
+ * laisse le vecteur acceleration intact
+ *
+ * La bille subit par defaut un mouvement uniformement accelere
+ * */
+public  void  deplacer( double deltaT)
+{
+	Cinematique.mouvementUniformementAccelere( this.getPosition(), this.getVitesse(), this.getAcceleration(), deltaT);
+}
 
 
 
@@ -122,7 +145,7 @@ public boolean gestionCollisionBilleBille(Vector<Bille> billes)
  * La nature du comportement de la bille en reponse à cette collision est definie dans les classes derivees
  * */
 public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
-
+public abstract void gestionAcceleration(Vector<Bille> billes);
 //----------------- classe Bille -------------------------------------
 }
 
