@@ -8,19 +8,9 @@ import mesmaths.cinematique.Cinematique;
 import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
-public class BilleNormal {
+public class BilleNormal extends Bille {
 	
-	public  Vecteur position;   // centre de la bille
-	public  double rayon;            // rayon > 0
-	public  Vecteur vitesse;
-	public  Vecteur acceleration;
-	public int clef;                // identifiant unique de cette bille
 
-	private Color couleur;
-
-	private static int prochaineClef = 0;
-
-	public static double ro = 1;        // masse volumique
 	
 	/**
 	 * @param centre
@@ -51,46 +41,7 @@ public class BilleNormal {
 		this(position,rayon,vitesse,new Vecteur(),couleur);
 	}
 	
-	/**
-	 * @return the position
-	 */
-	public Vecteur getPosition()
-	{
-		return this.position;
-	}
 	
-	/**
-	 * @return the rayon
-	 */
-	public double getRayon()
-	{
-		return this.rayon;
-	}
-	
-	/**
-	 * @return the vitesse
-	 */
-	public Vecteur getVitesse()
-	{
-		return this.vitesse;
-	}
-	
-	/**
-	 * @return the acceleration
-	 */
-	public Vecteur getAcceleration()
-	{
-		return this.acceleration;
-	}
-	
-	/**
-	 * @return the clef
-	 */
-	public int getClef()
-	{
-		return this.clef;
-	}
-
 	/**
 	 * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration. 
 	 * billes est la liste de toutes les billes en mouvement
@@ -145,5 +96,12 @@ public class BilleNormal {
 	    g.fillOval( xMin, yMin, width, height);
 	    g.setColor(Color.CYAN);
 	    g.drawOval(xMin, yMin, width, height);
+	}
+
+	@Override
+	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
+			double hauteur) {
+		// TODO Auto-generated method stub
+		
 	}
 }

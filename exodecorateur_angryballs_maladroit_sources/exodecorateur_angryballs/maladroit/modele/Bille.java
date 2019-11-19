@@ -1,6 +1,9 @@
 package exodecorateur_angryballs.maladroit.modele;
 
+import java.awt.Color;
 import java.util.Vector;
+
+import mesmaths.geometrie.base.Vecteur;
 
 
 /**
@@ -12,6 +15,59 @@ import java.util.Vector;
  * */
 public abstract class Bille
 {
+	
+	public  Vecteur position;   // centre de la bille
+	public  double rayon;            // rayon > 0
+	public  Vecteur vitesse;
+	public  Vecteur acceleration;
+	public int clef;                // identifiant unique de cette bille
+
+	protected Color couleur;
+
+	protected static int prochaineClef = 0;
+
+	public static double ro = 1;        // masse volumique
+	
+	/**
+	 * @return the position
+	 */
+	public Vecteur getPosition()
+	{
+		return this.position;
+	}
+	
+	/**
+	 * @return the rayon
+	 */
+	public double getRayon()
+	{
+		return this.rayon;
+	}
+	
+	/**
+	 * @return the vitesse
+	 */
+	public Vecteur getVitesse()
+	{
+		return this.vitesse;
+	}
+	
+	/**
+	 * @return the acceleration
+	 */
+	public Vecteur getAcceleration()
+	{
+		return this.acceleration;
+	}
+	
+	/**
+	 * @return the clef
+	 */
+	public int getClef()
+	{
+		return this.clef;
+	}
+
 //----------------- classe Bille-------------------------------------
 
 public abstract void gestionAcceleration(Vector<Bille> billes);
