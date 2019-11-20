@@ -8,13 +8,13 @@ public class RebonBord extends DecorateurBille{
 		// TODO Auto-generated constructor stub
 		super(bille);
 	}
-	
 
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
 			double hauteur) {
-		Collisions.collisionBilleContourAvecRebond(billeAdecorer.getPosition(), billeAdecorer.getRayon(), 
-				billeAdecorer.getVitesse(),
+		billeAdecorer.collisionContour(abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur);
+		Collisions.collisionBilleContourAvecRebond(this.getPosition(), this.getRayon(), 
+				this.getVitesse(),
 				abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur);
 	}
 

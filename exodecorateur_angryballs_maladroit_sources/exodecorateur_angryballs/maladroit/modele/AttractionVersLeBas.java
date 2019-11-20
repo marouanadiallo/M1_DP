@@ -4,7 +4,7 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
-public class AttractionVersLeBas extends DecorateurBille{
+public class AttractionVersLeBas extends AvecAcceleration{
 	Vecteur pesanteur;
 	
 	public AttractionVersLeBas(Bille bille, Vecteur pesanteur) {
@@ -17,13 +17,7 @@ public class AttractionVersLeBas extends DecorateurBille{
 	public void gestionAcceleration(Vector<Bille> billes)
 	{
 		this.billeAdecorer.gestionAcceleration(billes);
-		this.getAcceleration().ajoute(this.pesanteur);
-	}
-
-	@Override
-	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
-			double hauteur) {
-		// TODO Auto-generated method stub
+		this.billeAdecorer.getAcceleration().ajoute(this.pesanteur);
 	}
 
 }

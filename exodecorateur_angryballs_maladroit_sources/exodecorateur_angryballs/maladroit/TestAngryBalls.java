@@ -79,20 +79,26 @@ v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 //billes.add(new BilleNormal(p0, rayon, v0, Color.green));
 
 Bille b= new BilleNormal(p3, rayon, v2, Color.green);
-Bille b2= new BilleNormal(p2, rayon, v2, Color.blue);
+Bille b2= new BilleNormal(p2, rayon, v3, Color.blue);
 Bille b3 = new BilleNormal(p1, rayon, v1, Color.orange);
+Bille b4 = new BilleNormal(p4, rayon, v4, Color.black);
 
-b2 = new AttirerParLesAutres(b2);
 b2 = new RebonBord(b2);
+b2 = new AttractionVersLeBas(b2, new Vecteur(0,0.001));
+b2 = new FrottementVisqueux(b2);
 
-b3 = new AttractionVersLeBas(b3, new Vecteur(0,0.001));
-b3 = new RebonBord(b3);
+b = new RebonBord(b);
+b = new AttirerParLesAutres(b);
 
-b = new BloquerParUnBord(b);
+b3 = new BloquerParUnBord(b3);
+
+b4 = new AttractionVersLeBas(b4, new Vecteur(0,0.001));
+b4 = new FranchissementParoisReapparition(b4);
 
 billes.add(b);
 billes.add(b3);
 billes.add(b2);
+billes.add(b4);
 //---------------------- ici finit la partie à changer -------------------------------------------------------------
 
 

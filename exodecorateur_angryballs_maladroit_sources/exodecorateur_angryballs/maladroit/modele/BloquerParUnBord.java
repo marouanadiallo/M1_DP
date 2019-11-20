@@ -20,8 +20,8 @@ public class BloquerParUnBord extends DecorateurBille{
 	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
 			double hauteur) {
 		// TODO Auto-generated method stub
-		Collisions.collisionBilleContourAvecArretHorizontal(this.billeAdecorer.getPosition(), this.billeAdecorer.getRayon(), this.billeAdecorer.getVitesse(), abscisseCoinHautGauche, largeur);
-		Collisions.collisionBilleContourAvecArretVertical(this.billeAdecorer.getPosition(), this.billeAdecorer.getRayon(), this.billeAdecorer.getVitesse(), ordonneeCoinHautGauche, hauteur);	
+		Collisions.collisionBilleContourAvecArretHorizontal(this.getPosition(), this.getRayon(), this.getVitesse(), abscisseCoinHautGauche, largeur);
+		Collisions.collisionBilleContourAvecArretVertical(this.getPosition(), this.getRayon(), this.getVitesse(), ordonneeCoinHautGauche, hauteur);	
 	}
 
 }
