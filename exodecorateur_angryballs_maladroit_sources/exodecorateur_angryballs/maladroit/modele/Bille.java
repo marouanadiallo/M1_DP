@@ -18,63 +18,44 @@ import mesmaths.geometrie.base.Vecteur;
  * */
 public abstract class Bille
 {
-	
-	public  Vecteur position;   // centre de la bille
-	public  double rayon;            // rayon > 0
-	public  Vecteur vitesse;
-	public  Vecteur acceleration;
-	public int clef;                // identifiant unique de cette bille
-
-	protected Color couleur;
-
 	protected static int prochaineClef = 0;
 
 	public static double ro = 1;        // masse volumique
-	
+
 	/**
 	 * @return the position
 	 */
-	public Vecteur getPosition()
-	{
-		return this.position;
-	}
+	public abstract Vecteur getPosition();
 	
 	/**
 	 * @return the rayon
 	 */
-	public double getRayon()
-	{
-		return this.rayon;
-	}
+	public abstract double getRayon();
 	
 	/**
 	 * @return the vitesse
 	 */
-	public Vecteur getVitesse()
-	{
-		return this.vitesse;
-	}
+	public abstract Vecteur getVitesse();
+
 	
 	/**
 	 * @return the acceleration
 	 */
-	public Vecteur getAcceleration()
-	{
-		return this.acceleration;
-	}
+	public abstract Vecteur getAcceleration();
 	
 	/**
 	 * @return the clef
 	 */
-	public int getClef()
-	{
-		return this.clef;
-	}
+	public abstract int getClef();
+	/**
+	 * @return the couleur
+	 */
+	public abstract Color getCouleur();
 
 
 	public double masse() 
 	{
-		return ro*Geop.volumeSphere(rayon);
+		return ro*Geop.volumeSphere(this.getRayon());
 	}
 
 
@@ -83,12 +64,12 @@ public abstract class Bille
 	    int width, height;
 	    int xMin, yMin;
 	    
-	    xMin = (int)Math.round(position.x-rayon);
-	    yMin = (int)Math.round(position.y-rayon);
+	    xMin = (int)Math.round(this.getPosition().x-this.getRayon());
+	    yMin = (int)Math.round(this.getPosition().y-this.getRayon());
 	
-	    width = height = 2*(int)Math.round(rayon); 
+	    width = height = 2*(int)Math.round(this.getRayon()); 
 	
-	    g.setColor(couleur);
+	    g.setColor(this.getCouleur());
 	    g.fillOval( xMin, yMin, width, height);
 	    g.setColor(Color.CYAN);
 	    g.drawOval(xMin, yMin, width, height);
@@ -135,6 +116,15 @@ public  void  deplacer( double deltaT)
 	Cinematique.mouvementUniformementAccelere( this.getPosition(), this.getVitesse(), this.getAcceleration(), deltaT);
 }
 
+public void gestionAcceleration(Vector<Bille> billes)
+{
+	this.getAcceleration().set(Vecteur.VECTEURNUL);
+}
+
+public String toString() 
+{
+	return "centre = " + this.getPosition() + " rayon = "+this.getRayon() +  " vitesse = " + this.getVitesse() + " acceleration = " + this.getAcceleration() + " couleur = " + this.getCouleur() + "clef = " + this.getClef();
+}
 
 
 /**
@@ -145,7 +135,7 @@ public  void  deplacer( double deltaT)
  * La nature du comportement de la bille en reponse à cette collision est definie dans les classes derivees
  * */
 public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
-public abstract void gestionAcceleration(Vector<Bille> billes);
+
 //----------------- classe Bille -------------------------------------
 }
 

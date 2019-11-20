@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 import exodecorateur_angryballs.maladroit.modele.Bille;
+import exodecorateur_angryballs.maladroit.modele.BilleNormal;
 //import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
@@ -23,7 +24,7 @@ Vector<Bille> billes = new Vector<Bille>();
 Vecteur centreBille1 = new Vecteur(110,70);
 double rayonBille1 = 12;
 Vecteur vitesseBille1 = new Vecteur (10,-30);
-//Bille bille1 = new BilleMvtRUPasseMurailles(centreBille1, rayonBille1, vitesseBille1, Color.blue);
+//Bille bille1 = new AbsenceAcceleration(new BilleNormal(centreBille1,rayonBille1, vitesseBille1, Color.blue));
 //billes.add(bille1);
 
 Vecteur centreBille2 = new Vecteur(20,50);

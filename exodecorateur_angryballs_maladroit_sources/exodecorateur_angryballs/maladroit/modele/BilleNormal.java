@@ -1,16 +1,18 @@
 package exodecorateur_angryballs.maladroit.modele;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.util.Vector;
-
-import mesmaths.cinematique.Cinematique;
-import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
 public class BilleNormal extends Bille {
 	
 
+	public  Vecteur position;   // centre de la bille
+	public  double rayon;            // rayon > 0
+	public  Vecteur vitesse;
+	public  Vecteur acceleration;
+	public int clef;                // identifiant unique de cette bille
+
+	public Color couleur;
 	
 	/**
 	 * @param centre
@@ -41,24 +43,56 @@ public class BilleNormal extends Bille {
 		this(position,rayon,vitesse,new Vecteur(),couleur);
 	}
 	
-	
-	
-	public String toString() 
-    {
-		return "centre = " + position + " rayon = "+rayon +  " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef;
-    }
-	
-	@Override
-	public void gestionAcceleration(Vector<Bille> billes)
-	{
-		this.getAcceleration().set(Vecteur.VECTEURNUL);
-	}
 
-
-
+		// la bille normal doit avoir quoi comme collisionContour par défaut?
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,
 			double hauteur) {
 		// TODO Auto-generated method stub	
 	}
+	
+	
+	public Vecteur getPosition()
+	{
+		return this.position;
+	}
+	
+	/**
+	 * @return the rayon
+	 */
+	public double getRayon()
+	{
+		return this.rayon;
+	}
+	
+	/**
+	 * @return the vitesse
+	 */
+	public Vecteur getVitesse()
+	{
+		return this.vitesse;
+	}
+	
+	/**
+	 * @return the acceleration
+	 */
+	public Vecteur getAcceleration()
+	{
+		return this.acceleration;
+	}
+	
+	/**
+	 * @return the clef
+	 */
+	public int getClef()
+	{
+		return this.clef;
+	}
+
+	@Override
+	public Color getCouleur() {
+		// TODO Auto-generated method stub
+		return this.couleur;
+	}
+	
 }

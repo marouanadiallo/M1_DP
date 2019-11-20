@@ -5,7 +5,6 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
 import exodecorateur_angryballs.maladroit.modele.*;
 
 /**
@@ -16,6 +15,9 @@ import exodecorateur_angryballs.maladroit.modele.*;
 public class TestAngryBalls
 {
 
+/**
+ * @param args
+ */
 /**
  * @param args
  */
@@ -73,12 +75,24 @@ v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 //billes.add(new              BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
 //billes.add(new              BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
 //billes.add(new BilleMvtNewtonArret(p4, rayon, v4,  Color.black));
-Bille b = new BilleNormal(p0, rayon, v0, Color.green);
-b = new AbsenceAcceleration(b);
-b = new RebondBord(b);
+
+//billes.add(new BilleNormal(p0, rayon, v0, Color.green));
+
+Bille b= new BilleNormal(p3, rayon, v2, Color.green);
+Bille b2= new BilleNormal(p2, rayon, v2, Color.blue);
+Bille b3 = new BilleNormal(p1, rayon, v1, Color.orange);
+
+b2 = new AttirerParLesAutres(b2);
+b2 = new RebonBord(b2);
+
+b3 = new AttractionVersLeBas(b3, new Vecteur(0,0.001));
+b3 = new RebonBord(b3);
+
+b = new BloquerParUnBord(b);
 
 billes.add(b);
-
+billes.add(b3);
+billes.add(b2);
 //---------------------- ici finit la partie à changer -------------------------------------------------------------
 
 

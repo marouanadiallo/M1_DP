@@ -13,3 +13,11 @@
 /Collision.class
 /RebondBord.class
 /OutilsBilleNormal.class
+/DecorateurBille.class
+/RebonBord.class
+/AttractionVersLeBas.class
+/AttirerParLesAutres.class
+/FrottementVisqueux.class
+/BloquerParLesBords.class
+/BloquerParUnBord.class
+/FranchissementParoisEtReparationCoteOpose.class
