@@ -38,6 +38,7 @@ CadreAngryBalls cadre = new CadreAngryBalls("Angry balls",
 
 cadre.montrer(); // on rend visible la vue
 
+
 //------------- remplissage de la liste avec 4 billes -------------------------------
 
 
@@ -78,28 +79,45 @@ v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 
 //billes.add(new BilleNormal(p0, rayon, v0, Color.green));
 
-Bille b= new BilleNormal(p3, rayon, v2, Color.green);
-Bille b2= new BilleNormal(p2, rayon, v3, Color.blue);
-Bille b3 = new BilleNormal(p1, rayon, v1, Color.orange);
-Bille b4 = new BilleNormal(p4, rayon, v4, Color.black);
+Bille b= new BilleNormal(p0, rayon, v0, Color.red);
+Bille b2= new BilleNormal(p1, rayon, v1, Color.yellow);
+Bille b3 = new BilleNormal(p2, rayon, v2, Color.green);
+Bille b4 = new BilleNormal(p3, rayon, v3, Color.cyan);
+Bille b5 = new BilleNormal(p4, rayon, v4,  Color.black);
 
-b2 = new RebonBord(b2);
-b2 = new AttractionVersLeBas(b2, new Vecteur(0,0.001));
-b2 = new FrottementVisqueux(b2);
-
+//bille MvtRURebond
+b = new AbsenceAcceleration(b);
 b = new RebonBord(b);
-b = new AttirerParLesAutres(b);
 
-b3 = new BloquerParUnBord(b3);
+//Bille MvtPessanteurFrotementRebond
+b2 = new RebonBord(b2);
+b2 = new FrottementVisqueux(b2);
+b2 = new AttractionVersLeBas(b2, new Vecteur(0,0.001));
 
-b4 = new AttractionVersLeBas(b4, new Vecteur(0,0.001));
+//Bille MvtNewtonFrottementRebond
+b3 = new RebonBord(b3);
+b3 = new FrottementVisqueux(b3);
+b3 = new AttirerParLesAutres(b3);
+
+//Bille MvtRUPasseMurailles
+b4 = new AbsenceAcceleration(b4);
 b4 = new FranchissementParoisReapparition(b4);
 
+//Bille MvtNewtonArret
+b5 = new AttirerParLesAutres(b5);
+b5 = new BloquerParUnBord(b5);
+
 billes.add(b);
-billes.add(b3);
-billes.add(b2);
-billes.add(b4);
+//billes.add(b2);
+//billes.add(b3);
+//billes.add(b4);
+//billes.add(b5);
+
+/*active la décoration piloté*/
+StateManager sm = new StateManager(billes, cadre.billard);
+
 //---------------------- ici finit la partie à changer -------------------------------------------------------------
+
 
 
 System.out.println("billes = " + billes);

@@ -4,8 +4,6 @@ import java.awt.*;
 import java.util.Vector;
 
 import exodecorateur_angryballs.maladroit.modele.Bille;
-
-
 import outilsvues.EcouteurTerminaison;
 
 import outilsvues.Outils;
@@ -19,38 +17,40 @@ import outilsvues.Outils;
  * */
 public class CadreAngryBalls extends Frame implements VueBillard
 {
-TextField presentation;
-Billard billard;
-public Button lancerBilles, arreterBilles;
-Panel haut, centre, bas;
-
-EcouteurTerminaison ecouteurTerminaison;
-
+	TextField presentation;
+	public Billard billard;
+	public Button lancerBilles, arreterBilles;
+	Panel haut, centre, bas;
+	
+	EcouteurTerminaison ecouteurTerminaison;
+	
+	
 public CadreAngryBalls(String titre, String message, Vector<Bille> billes) throws HeadlessException
 {
-super(titre);
-Outils.place(this, 0.33, 0.33, 0.5, 0.5);
-this.ecouteurTerminaison = new EcouteurTerminaison(this);
-
-
-this.haut = new Panel(); this.haut.setBackground(Color.LIGHT_GRAY);
-this.add(this.haut,BorderLayout.NORTH);
-
-this.centre = new Panel();
-this.add(this.centre,BorderLayout.CENTER);
-
-this.bas = new Panel(); this.bas.setBackground(Color.LIGHT_GRAY);
-this.add(this.bas,BorderLayout.SOUTH);
-
-this.presentation = new TextField(message, 100); this.presentation.setEditable(false);
-this.haut.add(this.presentation);
-
-this.billard = new Billard(billes);
-this.add(this.billard);
-
-this.lancerBilles = new Button("lancer les billes"); this.bas.add(this.lancerBilles);
-this.arreterBilles = new Button("arreter les billes"); this.bas.add(this.arreterBilles);
-
+	super(titre);
+	Outils.place(this, 0.33, 0.33, 0.5, 0.5);
+	this.ecouteurTerminaison = new EcouteurTerminaison(this);
+	
+	
+	this.haut = new Panel(); this.haut.setBackground(Color.LIGHT_GRAY);
+	this.add(this.haut,BorderLayout.NORTH);
+	
+	this.centre = new Panel();
+	this.add(this.centre,BorderLayout.CENTER);
+	
+	this.bas = new Panel(); this.bas.setBackground(Color.LIGHT_GRAY);
+	this.add(this.bas,BorderLayout.SOUTH);
+	
+	this.presentation = new TextField(message, 100); this.presentation.setEditable(false);
+	this.haut.add(this.presentation);
+	
+	this.billard = new Billard(billes);
+	this.add(this.billard);
+	
+	
+	this.lancerBilles = new Button("lancer les billes"); this.bas.add(this.lancerBilles);
+	this.arreterBilles = new Button("arreter les billes"); this.bas.add(this.arreterBilles);
+	
 }
 
 public double largeurBillard() 
@@ -77,7 +77,6 @@ public void montrer()
 {
 this.setVisible(true);
 }
-
 
 
 }

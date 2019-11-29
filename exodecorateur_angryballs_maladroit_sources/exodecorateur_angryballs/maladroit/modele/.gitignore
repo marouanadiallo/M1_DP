@@ -25,3 +25,10 @@
 /AvecCollision.class
 /FranchissementParoisEtReaparationCoteOpose.class
 /FranchissementParoisReapparition.class
+/StateController.class
+/BillePilote.class
+/StateControllerWaitbeCatch.class
+/StateControllerWaitingbeCatch.class
+/ControllerWaitingToBeReleased.class
+/ControllerWaitingToBeCaught.class
+/StateManager.class

@@ -8,12 +8,11 @@ public class AbsenceAcceleration extends AvecAcceleration{
 		super(bille);
 		// TODO Auto-generated constructor stub
 	}
-	
-	// est-ce necessaire de rédefinir 
+
 	@Override
-	public void gestionAcceleration(Vector<Bille> billes)
-	{
-		this.billeAdecorer.gestionAcceleration(billes);
+	public void contributionAAcceleration(Vector<Bille> billes) {
+		// TODO Auto-generated method stub
+		/*Auncune contribution*/
 	}
 	
 }

@@ -12,9 +12,9 @@ public class FrottementVisqueux  extends AvecAcceleration{
 	}
 	
 	@Override
-	public void gestionAcceleration(Vector<Bille> billes)
-	{
-		this.billeAdecorer.gestionAcceleration(billes); 
+	public void contributionAAcceleration(Vector<Bille> billes) {
+		// TODO Auto-generated method stub
 		this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.billeAdecorer.masse(), this.getVitesse()));
+
 	}
 }
