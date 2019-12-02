@@ -5,19 +5,26 @@ import java.util.Vector;
 import mesmaths.geometrie.base.Vecteur;
 
 public class BillePilote extends AvecAcceleration {
-	private Vecteur uDelaSouris;
 	
-	public BillePilote(Bille bille, Vecteur u) {
+	private Vecteur force ;
+	
+	public BillePilote(Bille bille, Vecteur f) {
 		super(bille);
-		
-		this.uDelaSouris = u;
-		// TODO Auto-generated constructor stub
+		force = f;
+
 	}
 
 	@Override
 	public void contributionAAcceleration(Vector<Bille> billes) {
-		// TODO Auto-generated method stub
-		//this.getAcceleration().ajoute(this.uDelaSouris);
+		this.getAcceleration().ajoute(force);
+	}
+
+	public Vecteur getForce() {
+		return force;
+	}
+
+	public void setForce(Vecteur force) {
+		this.force = force;
 	}
 	
 }

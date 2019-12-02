@@ -108,7 +108,7 @@ b5 = new AttirerParLesAutres(b5);
 b5 = new BloquerParUnBord(b5);
 
 billes.add(b);
-//billes.add(b2);
+billes.add(b2);
 //billes.add(b3);
 //billes.add(b4);
 //billes.add(b5);

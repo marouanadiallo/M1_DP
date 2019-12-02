@@ -51,4 +51,12 @@ public abstract class DecorateurBille extends Bille{
 		return this.billeAdecorer.getCouleur();
 	}
 
+	public Bille getBilleAdecorer() {
+		return billeAdecorer;
+	}
+
+	public void setBilleAdecorer(Bille billeAdecorer) {
+		this.billeAdecorer = billeAdecorer;
+	}
+	
 }

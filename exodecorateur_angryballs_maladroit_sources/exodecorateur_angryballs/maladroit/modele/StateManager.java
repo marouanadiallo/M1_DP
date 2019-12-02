@@ -6,14 +6,13 @@ import java.awt.event.MouseMotionListener;
 import java.util.Vector;
 
 import exodecorateur_angryballs.maladroit.vues.Billard;
-import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
 
 public class StateManager implements MouseMotionListener, MouseListener{
 	
 	private ControllerWaitingToBeCaught etatLibre;
 	private ControllerWaitingToBeReleased etatAttraper;
 	
-	Vector<Bille> billes = new Vector<Bille>();
+	Vector<Bille> billes;
 	Billard billard;
 	
 	private StateController cc;
@@ -42,19 +41,19 @@ public class StateManager implements MouseMotionListener, MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		this.cc.traiter(arg0);
+		this.cc.traiterMPressed(arg0);
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		this.cc.traiter(arg0);
+		this.cc.traiterMReleased(arg0);
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		this.cc.traiter(arg0);
+		this.cc.traiterMDragged(arg0);
 	}
 	
 	
