@@ -15,7 +15,7 @@ public class ControllerWaitingToBeReleased extends StateController{
 	public void traiterMDragged(MouseEvent e) {
 		Vecteur force = new Vecteur(e.getX(),e.getY()).difference(this.suivant.billeAPiloter.getPosition());
 		force.multiplie(1/this.suivant.billeAPiloter.masse());//on divise par la masse pour bien garder la portotion avec le rayon de la bille
-		this.suivant.billeAPiloter.setForce(force);
+		this.suivant.billeAPiloter.setaccelerationAppliquer(force);
 	}
 	
 	@Override

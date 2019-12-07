@@ -6,25 +6,25 @@ import mesmaths.geometrie.base.Vecteur;
 
 public class BillePilote extends AvecAcceleration {
 	
-	private Vecteur force ;
+	private Vecteur accelerationAppliquer ;
 	
 	public BillePilote(Bille bille, Vecteur f) {
 		super(bille);
-		force = f;
+		accelerationAppliquer = f;
 
 	}
 
 	@Override
 	public void contributionAAcceleration(Vector<Bille> billes) {
-		this.getAcceleration().ajoute(force);
+		this.getAcceleration().ajoute(accelerationAppliquer);
 	}
 
-	public Vecteur getForce() {
-		return force;
+	public Vecteur getaccelerationAppliquer() {
+		return accelerationAppliquer;
 	}
 
-	public void setForce(Vecteur force) {
-		this.force = force;
+	public void setaccelerationAppliquer(Vecteur accelerationAppliquer) {
+		this.accelerationAppliquer = accelerationAppliquer;
 	}
 	
 }

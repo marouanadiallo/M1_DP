@@ -77,8 +77,6 @@ v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
 //billes.add(new              BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
 //billes.add(new BilleMvtNewtonArret(p4, rayon, v4,  Color.black));
 
-//billes.add(new BilleNormal(p0, rayon, v0, Color.green));
-
 Bille b= new BilleNormal(p0, rayon, v0, Color.red);
 Bille b2= new BilleNormal(p1, rayon, v1, Color.yellow);
 Bille b3 = new BilleNormal(p2, rayon, v2, Color.green);
@@ -109,9 +107,9 @@ b5 = new BloquerParUnBord(b5);
 
 billes.add(b);
 billes.add(b2);
-//billes.add(b3);
-//billes.add(b4);
-//billes.add(b5);
+billes.add(b3);
+billes.add(b4);
+billes.add(b5);
 
 /*active la décoration piloté*/
 StateManager sm = new StateManager(billes, cadre.billard);
